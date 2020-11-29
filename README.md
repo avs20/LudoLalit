@@ -42,4 +42,7 @@ Rules of game
 
 
 
+There should be some restricted moves also. 
+Like if there is no availabe goti and you have a 6 then you should take 1 goti out of the house. 
+
 

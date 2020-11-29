@@ -10,6 +10,14 @@ class Goti:
     def getCurrentPos(self):
         return self.position, self.stepsTaken
 
+    def checkIfOutHouse(self):
+        '''
+        checks if the goti can be moved or not
+        '''
+        return self.position is not None
+
+      
+
     def __move__(self, numSteps):
         '''
         moves the goti to the next step
@@ -23,6 +31,9 @@ class Goti:
             #need to set the position also
             self.position = self.startPos
             return 0
+        if self.position[0] == 'H':
+            print('Invalid move, can\'t move this goti')
+            return -1 
 
         if self.stepsTaken is not None and self.position:
             '''
@@ -37,6 +48,7 @@ class Goti:
              'D' : 'L',
              'L' : 'T'   }
 
+            
             # check current position 
             if self.position[1]  + numSteps <= 7:
                 self.position[1] += numSteps
@@ -80,6 +92,7 @@ class Goti:
             self.stepsTaken = -1 
             self.position = ['H',0]
             return True
+        return False
 
 
            
